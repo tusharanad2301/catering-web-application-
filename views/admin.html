@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="/catering-reservation-system1/public/css/style.css">
+</head>
+<body>
+  <header>
+    <h2>Admin Dashboard</h2>
+    <nav>
+      <a href="/">Home</a>
+      <a href="index.html">Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h3>Upload New Product</h3>
+      <form action="/admin/add-product" method="POST">
+        <label for="name">Product Name:</label>
+        <input type="text" name="name" required>
+
+        <label for="description">Description:</label>
+        <textarea name="description" required></textarea>
+
+        <label for="price">Price (₹):</label>
+        <input type="number" name="price" step="0.01" required>
+
+        <label for="image">Image URL:</label>
+        <input type="text" name="image" required>
+
+        <button type="submit">Add Product</button>
+      </form>
+    </section>
+
+    <section>
+      <h3>View Orders</h3>
+      <div id="order-list" class="orders"></div>
+    </section>
+  </main>
+
+ <script src="/catering-reservation-system1/public/js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  // Load orders
+  fetch("/admin/orders")
+    .then(res => res.json())
+    .then(orders => {
+      const orderList = document.getElementById("order-list");
+      if (!orderList) return;
+
+      orders.forEach(order => {
+        const div = document.createElement("div");
+        div.innerHTML = `
+          <strong>Order #${order.id}</strong>
+          <p>Customer: ${order.customer}</p>
+          <p>Product: ${order.product}</p>
+          <p>Qty: ${order.quantity}</p>
+          <p>Status: ${order.status}</p>
+          <p>Total: ₹${order.total_price}</p>
+          <hr>
+        `;
+        orderList.appendChild(div);
+      });
+    })
+    .catch(err => console.error("Failed to fetch orders", err));
+});
+  document.querySelector("form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    // Additional JavaScript logic can be added here if needed
+  });
+</script>
+  <footer>
+    <p>&copy; 2025 Catering System. All rights reserved.</p>
+  </footer>
+</body>
+</html>

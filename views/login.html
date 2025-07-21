@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Catering System</title>
+   <link rel="stylesheet" href="/catering-reservation-system1/public/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form action="/user/login.html" method="POST">
+      <label for="email">Email:</label>
+      <input type="email" name="email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" name="password" required>
+
+      <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="register.html">Register here</a>.</p>
+  </div>
+<footer>
+  <p>&copy; 2025 Catering System. All rights reserved.</p>
+</footer>
+</body>
+<script src="/catering-reservation-system1/public/js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("form");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const body = new URLSearchParams(formData);
+
+    const res = await fetch("/user/login", {
+      method: "POST",
+      body
+    });
+
+    if (res.redirected) {
+      window.location.href = res.url;
+    } else {
+      alert("Login failed. Please check your credentials.");
+    }
+  });
+});
+  document.querySelector("form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    // Additional JavaScript logic can be added here if needed
+  });   
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="/catering-reservation-system1/public/css/style.css">
+</head>
+<body>
+  <header>
+    <h2>Welcome, User!</h2>
+    <nav>
+      <a href="/">Home</a>
+      <a href="index.html">Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <h3>Available Catering Items</h3>
+    <div id="product-list" class="products"></div>
+
+    <h3>My Cart</h3>
+    <div id="cart" class="cart-items"></div>
+
+    <button onclick="placeOrder()">Place Order</button>
+  </main>
+
+  <script src="/catering-reservation-system1/public/js/main.js"></script>
+  <footer>
+    <p>&copy; 2025 Catering System. All rights reserved.</p>
+  </footer> 
+</body>
+</html>

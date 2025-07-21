@@ -1,0 +1,258 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  background-color: #1e90ff;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1, header h2 {
+  margin-bottom: 10px;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main container */
+.container, main {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Forms */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form input, form textarea, form button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+form button {
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0d6efd;
+}
+
+/* Product / Cart UI */
+.products, .cart-items, .orders {
+  display: grid;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.products div, .cart-items div, .orders div {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fafafa;
+}
+
+footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) { 
+  body {
+    padding: 10px;
+  }
+
+  header h1, header h2 {
+    font-size: 1.5em;
+  }
+
+  .container, main {
+    padding: 15px;
+  }
+
+  form input, form textarea, form button {
+    font-size: 14px;
+  }
+
+  nav a {
+    margin: 0 10px;
+  }
+}
+
+/* public/css/style.css */
+
+.intro img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  margin: 20px auto;
+}
+.intro {
+  text-align: center;
+}   
+.intro h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+.intro p {
+  font-size: 1.2em;
+  color: #555;
+}
+.intro a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+.intro a:hover {
+  text-decoration: underline;
+}
+/* Additional styles for specific pages */
+.about {
+  text-align: center;
+  margin: 20px 0;
+}
+.about h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+.about p {
+  font-size: 1.1em;
+  color: #666;
+  line-height: 1.6;
+}
+/* Footer */
+footer {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  font-size: 0.9em;
+}
+footer p {
+  margin: 0;
+  color: #555;
+}
+footer a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+/* Cart and Order styles */
+.cart, .order {
+  margin: 20px 0;
+}
+.cart h2, .order h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+.cart-items, .order-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cart-items div, .order-items div {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+}
+.cart-items div span, .order-items div span {
+  flex: 1;
+}
+.cart-items div span:last-child, .order-items div span:last-child {
+  text-align: right;
+}
+.cart-items div button, .order-items div button {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.cart-items div button:hover, .order-items div button:hover {
+  background-color: #e55347;
+}
+/* Responsive adjustments for cart and order */
+@media (max-width: 600px) {
+  .cart-items div, .order-items div {
+    flex-direction: column;
+  }
+  .cart-items div span:last-child, .order-items div span:last-child {
+    text-align: left;
+  }
+}
+/* Additional styles for buttons */
+button {
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #0d6efd;
+}
+/* Additional styles for product listings */
+.products div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.products div img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.products div h3 {
+  margin: 10px 0;
+  font-size: 1.2em;
+}
+.products div p {
+  color: #666;
+  font-size: 0.9em;
+}
+.products div button {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.products div button:hover {
+  background-color: #0b5ed7;
+}
